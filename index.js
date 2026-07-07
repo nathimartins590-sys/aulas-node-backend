@@ -37,6 +37,18 @@ app.get("/api/pessoa", (req, res) => {
     res.send({message: "bah foi criado"})
 })
 
+// app.put("/api/update/:id", (req, res) => {
+//     let nome = req.body.nome;
+//     pessoa[req.params.id] = nome
+//     return res.json(pessoa[req.params.id])
+// })
+
+// app.delete("/api/delete/:id", (req, res) => {
+//     let id = req.params.id;
+//     pessoa[id] = null;
+//     return res.json(pessoa[id]);
+// })
+
 app.listen(3000,() => {
     console.log("o servidor ta escutando 3000")
 });
