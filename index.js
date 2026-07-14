@@ -1,54 +1,41 @@
 import express from 'express'
-import bancoDeDados from './repository/index.js';
 
 const app = express()
 
-// app.get("/api/v1/somar", (req, rest) => {
+//somar
+app.get("/api/v1/somar", (req, res) => {
+    const {num1, num2} = req.query
+    const resultado = Number (num1) + Number (num2)
 
-//     console.log(req.query)
-    
-//     const num1=Number(req.query.num1)
-//     const num2=Number(req.query.num2)
-//     const resultado=num1+num2
-
-//     rest.send({ resultado: resultado})
-// });
-
-
-app.get("/api/pessoa/:id", (req, res) => {
-    const id = req.params.id
-    const pessoa = bancoDeDados.find(it => it.id == id)
-    if(!pessoa) {
-        res.send({ message: "pessoa não encontrada"})
-
-        return
-    }
-    res.send({ pessoa })
-});
-
-app.get("/api/pessoa", (req, res) => {
-    const {id, nome} = req.query
-    if(!id || !nome) {
-        res.send({ message: "informe o id e nome"})
-
-        return
-    }
-    bancoDeDados.push({id, nome})
-    res.send({message: "bah foi criado"})
+    res.status(200).send({ message: resultado })
+    //res.send({ message: resultado })
 })
 
-// app.put("/api/update/:id", (req, res) => {
-//     let nome = req.body.nome;
-//     pessoa[req.params.id] = nome
-//     return res.json(pessoa[req.params.id])
-// })
+//subtrair
+app.get("/api/v1/sub", (req, res) => {
+    const {num1, num2} = req.query
+    const resultado = Number (num1) - Number (num2)
 
-// app.delete("/api/delete/:id", (req, res) => {
-//     let id = req.params.id;
-//     pessoa[id] = null;
-//     return res.json(pessoa[id]);
-// })
+    res.status(200).send({ message: resultado })
+    //res.send({ message: resultado })
+})
+//mult
+app.get("/api/v1/mult", (req, res) => {
+    const {num1, num2} = req.query
+    const resultado = Number (num1) * Number (num2)
+
+    res.status(200).send({ message: resultado })
+    //res.send({ message: resultado })
+})
+//div
+app.get("/api/v1/div", (req, res) => {
+    const {num1, num2} = req.query
+    const resultado = Number (num1) / Number (num2)
+
+    res.status(200).send({ message: resultado })
+    //res.send({ message: resultado })
+})
 
 app.listen(3000,() => {
-    console.log("o servidor ta escutando 3000")
+    console.log("bah ta funcionando 3000")
 });
