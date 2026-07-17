@@ -1,9 +1,10 @@
-const express = require('express');
-const app = express();
+import express from 'express'
 
-app.use(express.json());
+const router = express.Router()
 
-app.post('/peso-ideal', (req, res) => {
+router.use(express.json());
+
+router.post('/peso-ideal', (req, res) => {
     const { sexo, altura } = req.body;
 
     if (typeof altura !== 'number' || (sexo !== 'H' && sexo !== 'M')) {
@@ -20,6 +21,4 @@ app.post('/peso-ideal', (req, res) => {
     res.json({ pesoIdeal });
 });
 
-app.listen(3000, () => {
-    console.log('Servidor rodando 3000');
-});
+export default router

@@ -1,7 +1,8 @@
-const express = require('express');
-const app = express();
+import express from 'express'
 
-app.use(express.json()); 
+const router = express.Router()
+
+router.use(express.json());
 
 app.post('/api/v1/celsius-fahrenheit/:id', (req, res) => {
     const { celsius } = req.body;
@@ -16,6 +17,4 @@ app.post('/api/v1/celsius-fahrenheit/:id', (req, res) => {
     res.json({ fahrenheit });
 });
 
-app.listen(3000, () => {
-    console.log('Servidor rodando 3000');
-});
+export default router

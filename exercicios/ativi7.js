@@ -1,9 +1,10 @@
-const express = require('express');
-const app = express();
+import express from 'express'
 
-app.use(express.json());
+const router = express.Router()
 
-app.post('/api/v1/km-metros-cm', (req, res) => {
+router.use(express.json());
+
+router.post('/api/v1/km-metros-cm', (req, res) => {
     const { quilometros } = req.body;
 
     if (typeof quilometros !== 'number') {
@@ -16,6 +17,4 @@ app.post('/api/v1/km-metros-cm', (req, res) => {
     res.json({ metros, centimetros });
 });
 
-app.listen(3000, () => {
-    console.log('Servidor rodando 3000');
-});
+export default router

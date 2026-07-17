@@ -1,9 +1,10 @@
-const express = require('express');
-const app = express();
+import express from 'express'
 
-app.use(express.json());
+const router = express.Router()
 
-app.post('/api/v1/tabuada', (req, res) => {
+router.use(express.json());
+
+router.post('/api/v1/tabuada', (req, res) => {
     const { numero } = req.body;
 
     if (!Number.isInteger(numero)) {
@@ -18,6 +19,4 @@ app.post('/api/v1/tabuada', (req, res) => {
     res.json({ tabuada });
 });
 
-app.listen(3000, () => {
-    console.log('Servidor rodando 3000');
-});
+export default router

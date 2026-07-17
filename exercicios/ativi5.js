@@ -1,9 +1,10 @@
-const express = require('express');
-const app = express();
+import express from 'express'
 
-app.use(express.json());
+const router = express.Router()
 
-app.post('/api/v1/milhas-km/:id', (req, res) => {
+router.use(express.json());
+
+router.post('/api/v1/milhas-km/:id', (req, res) => {
     const { milhas } = req.body;
     const quilometros = milhas
 
@@ -16,6 +17,4 @@ app.post('/api/v1/milhas-km/:id', (req, res) => {
     res.json({ quilometros });
 });
 
-app.listen(3000, () => {
-    console.log('Servidor rodando 3000');
-});
+export default router

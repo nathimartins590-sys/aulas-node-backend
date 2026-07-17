@@ -1,9 +1,10 @@
-const express = require('express');
-const app = express();
+import express from 'express'
 
-app.use(express.json());
+const router = express.Router()
 
-app.post('/api/v1/situacao-aluno', (req, res) => {
+router.use(express.json());
+
+router.post('/api/v1/situacao-aluno', (req, res) => {
     const { nota1, nota2, nota3 } = req.body;
 
     if (typeof nota1 !== 'number' || typeof nota2 !== 'number' || typeof nota3 !== 'number') {
@@ -24,6 +25,4 @@ app.post('/api/v1/situacao-aluno', (req, res) => {
     res.json({ media, situacao });
 });
 
-app.listen(3000, () => {
-    console.log('Servidor rodando 3000');
-});
+export default router

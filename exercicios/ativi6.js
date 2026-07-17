@@ -1,9 +1,10 @@
-const express = require('express');
-const app = express();
+import express from 'express'
 
-app.use(express.json());
+const router = express.Router()
 
-app.post('/api/v1/duracao/:id', (req, res) => {
+router.use(express.json());
+
+router.post('/api/v1/duracao/:id', (req, res) => {
     const { segundosTotais } = req.body;
     const { horas, minutos, segundos } = segundosTotais
 
@@ -18,6 +19,4 @@ app.post('/api/v1/duracao/:id', (req, res) => {
     res.json({ horas, minutos, segundos });
 });
 
-app.listen(3000, () => {
-    console.log('Servidor rodando 3000');
-});
+export default router
