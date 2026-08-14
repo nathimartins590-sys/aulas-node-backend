@@ -9,6 +9,10 @@ import exercicios7 from './exercicios/ativi7.js'
 import exercicios8 from './exercicios/ativi8.js'
 import exercicios9 from './exercicios/ativi9.js'
 import exercicios10 from './exercicios/ativi10.js'
+import exercicios11 from './exercicios/ativi11.js'
+import exercicios12 from './exercicios/ativi12.js'
+import exercicios13 from './exercicios/ativi13.js'
+import exercicios14 from './exercicios/ativi14.js'
 
 const app = express()
 
@@ -24,6 +28,10 @@ app.use('/api/v1/exercicios/ativi7', exercicios7)
 app.use('/api/v1/exercicios/ativi8', exercicios8)
 app.use('/api/v1/exercicios/ativi9', exercicios9)
 app.use('/api/v1/exercicios/ativi10', exercicios10)
+app.use('./apiv1/exercicios/ativi11', exercicios11)
+app.use('./api/v1/exercicios/ativi12', exercicios12)
+app.use('./api/v1/exercicios/ativi13', exercicios13)
+app.use('./api/v1/exercicios/ativi14', exercicios14)
 
 //somar
 // app.get("/api/v1/somar", (req, res) => {
