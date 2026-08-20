@@ -9,7 +9,7 @@ router.post('/api/v1/salario/:id', (req, res) => {
     const { valorPorHora, horasTrabalhadas } = req.body;
     const totalReceber = Number (valorPorHora) * Number (horasTrabalhadas)
 
-    if (typeof valorPorHora !== 'number' || typeof horasTrabalhadas !== 'number') {
+    if (valorPorHora !== 'number' ||horasTrabalhadas !== 'number') {
         return res.status(400).json({ erro: 'Envie valor por hora e horas trabalhadas' });
     }
 

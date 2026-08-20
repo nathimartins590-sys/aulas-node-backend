@@ -7,7 +7,7 @@ router.use(express.json());
 router.post('/api/v1/situacao-aluno', (req, res) => {
     const { nota1, nota2, nota3 } = req.body;
 
-    if (typeof nota1 !== 'number' || typeof nota2 !== 'number' || typeof nota3 !== 'number') {
+    if (nota1 !== 'number' || nota2 !== 'number' || nota3 !== 'number') {
         return res.status(400).json({ erro: 'Envie nota1, nota2 e nota3 como números.' });
     }
 

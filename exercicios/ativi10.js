@@ -7,7 +7,7 @@ router.use(express.json());
 router.post('/peso-ideal', (req, res) => {
     const { sexo, altura } = req.body;
 
-    if (typeof altura !== 'number' || (sexo !== 'H' && sexo !== 'M')) {
+    if ( altura !== 'number' || (sexo !== 'H' && sexo !== 'M')) {
         return res.status(400).json({ erro: 'Envie sexo como "H" ou "M" e altura como número.' });
     }
 

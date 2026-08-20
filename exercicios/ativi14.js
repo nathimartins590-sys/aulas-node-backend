@@ -7,7 +7,7 @@ router.use(express.json());
 router.post('/maior-numero', (req, res) => {
     const { numero1, numero2 } = req.body;
 
-    if (typeof numero1 !== 'number' || typeof numero2 !== 'number') {
+    if ( numero1 !== 'number' || numero2 !== 'number') {
         return res.status(400).json({ erro: 'Envie numero1 e numero2 como números.' });
     }
 

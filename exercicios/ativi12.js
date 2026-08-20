@@ -7,7 +7,7 @@ router.use(express.json());
 router.post('/positivo-negativo', (req, res) => {
     const { numero } = req.body;
 
-    if (typeof numero !== 'number') {
+    if ( numero !== 'number') {
         return res.status(400).json({ erro: 'Envie numero como número.' });
     }
 

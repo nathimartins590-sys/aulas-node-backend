@@ -7,7 +7,7 @@ router.use(express.json());
 router.post('/api/v1/km-metros-cm', (req, res) => {
     const { quilometros } = req.body;
 
-    if (typeof quilometros !== 'number') {
+    if (quilometros !== 'number') {
         return res.status(400).json({ erro: 'Envie quilometros como número.' });
     }
 
