@@ -1,5 +1,5 @@
 import express from 'express'
-import ControllerCarro from '../controler/carro.js'
+import ControllerCarro from '../controller/carro.js'
 
 const router = express.Router()
 

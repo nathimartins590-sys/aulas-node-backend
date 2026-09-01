@@ -2,9 +2,9 @@ import ServiceCarro from '../service/carro.js'
 
 class ControllerCarro {
     //recebimento e saida de info
-    Buscar(req, res) {
+    async Buscar(_, res) {
         try {
-            const carros = ServiceCarro.Buscar()
+            const carros = await ServiceCarro.Buscar()
             res.send({ message: carros })
         } catch (error) {
             res.status(500).send({
