@@ -51,13 +51,13 @@ class ServiceCarro {
     }
 
     async Deletar(id) {
-//     //      if (!id) {
-//     //             throw new Error({ message: "favor informar o id" })
-//     //         }
+         if (!id) {
+                throw new Error({ message: "favor informar o id" })
+            }
            
-//     //     RepositoryCarro.splice(it => it.id === id, 1)
+        const carro = RepositoryCarro.Delete(id)
 
-        return RepositoryCarro.Delete(id)
+        return carro
       }
 
 }

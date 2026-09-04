@@ -1,7 +1,7 @@
 import carro from "../model/carro.js"
 
 class RepositoryCarro {
-    
+
     async Find() {
        const carros = await carro.findAll()
 
@@ -14,20 +14,24 @@ class RepositoryCarro {
         return carroDetalhes
     }
 
-    async Creat() {
-        const carroCriar = await carro.create()
+    async Creat(marca, ano) {
+        const carroCriar = await carro.create({marca, ano})
 
         return carroCriar
     }
 
     async Update() {
-        const carroAtualizar = await carro.update()
-
-        return carroAtualizar
+        
     }
 
-    async Delete() {
-        const carroDeletar = await carro.delete()
+    async Delete(id) {
+        const carroDeletar = await carro.findByPk(id)
+
+        if(!carroDeletar){
+            throw new Error("nao foi achado")
+        }
+
+        await carroDeletar.destroy()
 
         return carroDeletar
     }

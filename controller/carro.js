@@ -60,7 +60,7 @@ class ControllerCarro {
         try {
             const id = req.body.id
             
-            ServiceCarro.Delete(id)
+            await ServiceCarro.Delete(id)
 
             res.send({ message: "deletado" })
         } catch (error) {
