@@ -8,6 +8,7 @@ const app = express()
 app.use(express.json())
 
 app.use("/api/v1/carro", router)
+app.use("/api/v1/usuario", usuario)
 
 database.db
     .sync({ froce: false })
