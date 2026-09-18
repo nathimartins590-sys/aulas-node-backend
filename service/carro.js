@@ -21,13 +21,12 @@ class ServiceCarro {
         return carro
     }
     //função(parametro, parametro, parametro)
-    async Criar( marca, ano) {
-    //     if (!id || !marca || !ano) {
-    //             throw new Error({ message: "colocar todas as informações" })
-    //         }
-
-    //        RepositoryCarro.push({ id, marca, ano })
-         return RepositoryCarro.Creat( marca, ano)
+    async Criar( id, marca, ano) {
+        if (!id || !marca || !ano) {
+                throw new Error({ message: "colocar todas as informações" })
+            }
+const carro =await  RepositoryCarro.Creat(marca,ano)
+return carro
     }
 
     async Alterar(id) {

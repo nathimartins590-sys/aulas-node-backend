@@ -31,7 +31,7 @@ class ControllerCarro {
         try {
             const { marca, ano } = req.body
 
-           await ServiceCarro.Create( marca, ano )
+           await ServiceCarro.Criar( marca, ano )
             
             res.status(201).send({ message: "cadastrado com sucesso" })
         } catch (error) {

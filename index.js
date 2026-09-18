@@ -1,6 +1,7 @@
 import express from 'express'
 import router from './router/carro.js';
 import database from './config/database.js';
+import usuario from './model/usuario.js';
 
 
 const app = express()
